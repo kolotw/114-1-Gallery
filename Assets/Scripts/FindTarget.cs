@@ -12,7 +12,7 @@ public class FindTarget : MonoBehaviour
     [Header("目標資訊")]
     public Transform 最近的敵人;
     public GameObject 最終目標;
-    public Vector3 原始相對座標 = new Vector3(0, 1.6f, 1.72f);
+    public Vector3 原始相對座標 = new Vector3(0, 1.4f, 1.72f);
 
     // 內部建立模型用
     Mesh 視線範圍模型;
@@ -25,7 +25,7 @@ public class FindTarget : MonoBehaviour
         // 初始化視覺模型繪製組件
         GameObject visualObj = new GameObject("PlayerFOV");
         visualObj.transform.SetParent(this.transform);
-        visualObj.transform.localPosition = new Vector3(0, 1.6f, 0);
+        visualObj.transform.localPosition = new Vector3(0, 1.4f, 0);
         visualObj.transform.localRotation = Quaternion.identity;
 
         visualObj.AddComponent<MeshRenderer>().material = 視覺材質;
@@ -51,7 +51,7 @@ public class FindTarget : MonoBehaviour
         float 目前角度 = -視覺角度 / 2;
         float 角度增強 = 視覺角度 / (視線圓弧點 - 1);
 
-        Vector3 射線起點 = transform.position + Vector3.up * 1.6f; // 從腰部高度發射
+        Vector3 射線起點 = transform.position + Vector3.up * 1.4f; // 從腰部高度發射
 
         GameObject closestEnemy = null;
         float shortestDistance = 視覺距離;
@@ -113,7 +113,7 @@ public class FindTarget : MonoBehaviour
         {
             最近的敵人 = closestEnemy.transform;
             Vector3 pos = closestEnemy.transform.position;
-            pos.y = 1.6f;
+            pos.y = 1.4f;
             最終目標.transform.position = pos;
         }
         else
