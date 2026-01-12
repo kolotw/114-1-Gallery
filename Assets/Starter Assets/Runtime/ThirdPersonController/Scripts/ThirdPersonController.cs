@@ -159,8 +159,8 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 
-            JumpAndGravity();
-            GroundedCheck();
+            //JumpAndGravity();
+            //GroundedCheck();
             Move();
             //要開槍
             if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -206,7 +206,7 @@ namespace StarterAssets
                 //Don't multiply mouse input by Time.deltaTime;
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
+                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier * 10f;
                 _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
             }
 
