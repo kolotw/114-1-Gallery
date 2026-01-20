@@ -6,6 +6,7 @@ public class bulletActions : MonoBehaviour
     {
         if (other.tag == "poster")
         {
+            Destroy(this.gameObject);
             GameObject[] ps = GameObject.Find("/00EventControlll").GetComponent<EventControll>().posters;
             foreach(GameObject p in ps)
             {

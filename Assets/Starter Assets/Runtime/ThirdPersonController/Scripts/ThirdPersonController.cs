@@ -408,7 +408,7 @@ namespace StarterAssets
                 方向 = (目標 - 發射點.position).normalized;
                 發射點.rotation = Quaternion.LookRotation(方向);
                 GameObject bb = Instantiate(子彈, 發射點.position, 發射點.rotation);
-                bb.GetComponent<Rigidbody>().linearVelocity = 方向 * Time.deltaTime * 1000;
+                bb.GetComponent<Rigidbody>().linearVelocity = 方向 * Time.deltaTime * 300;
                 Destroy(bb, 3f);
             }
             else
