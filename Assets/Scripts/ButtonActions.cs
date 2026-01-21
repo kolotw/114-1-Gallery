@@ -5,6 +5,15 @@ using static System.Net.Mime.MediaTypeNames;
 public class ButtonActions : MonoBehaviour
 {
     string thisUrl = string.Empty;
+    public void buttonX()
+    {
+        GameObject.Find("/00EventControlll").GetComponent<EventControll>().closePoster();
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("bullet");
+        for (int i = 0; i < bullets.Length; i++)
+        {
+            Destroy(bullets[i]);
+        }
+    }
     public void button1()
     {
         thisUrl = "https://www.youtube.com/watch?v=9V1Tnc73vRA&list=PLhYG3NI3HHyseNfwIOsV2lwPLk7uO65hT&index=37";

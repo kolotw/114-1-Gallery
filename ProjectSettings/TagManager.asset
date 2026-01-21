@@ -7,11 +7,13 @@ TagManager:
   - CinemachineTarget
   - poster
   - Watch
+  - bullet
+  - wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - Gallery

@@ -28,4 +28,14 @@ public class EventControll : MonoBehaviour
             }
         }
     }
+    public void closePoster() 
+    {
+        if (posters != null)
+        {
+            foreach (GameObject poster in posters)
+            {
+                poster.SetActive(false);
+            }
+        }
+    }
 }

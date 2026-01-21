@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TeleportToggleOnR : MonoBehaviour
 {
-    bool goA = true;
+    public bool goA = false;
 
     void Update()
     {

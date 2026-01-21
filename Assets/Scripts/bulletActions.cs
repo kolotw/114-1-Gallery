@@ -19,8 +19,10 @@ public class bulletActions : MonoBehaviour
                 {
                     p.SetActive(false);
                 }
-            }
-            
+            }            
+        }else if (other.tag == "wall")
+        {
+            Destroy(this.gameObject);
         }
     }
 }
