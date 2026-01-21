@@ -159,8 +159,8 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 
-            //JumpAndGravity();
-            //GroundedCheck();
+            JumpAndGravity();
+            GroundedCheck();
             Move();
             //要開槍
             if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -304,19 +304,19 @@ namespace StarterAssets
                 // stop our velocity dropping infinitely when grounded
                 if (_verticalVelocity < 0.0f)
                 {
-                    _verticalVelocity = -2f;
+                    _verticalVelocity = -0.1f;
                 }
 
                 // Jump
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
-                    _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+                    _verticalVelocity = Mathf.Sqrt(JumpHeight * -0.2f * Gravity);
 
                     // update animator if using character
                     if (_hasAnimator)
                     {
-                        _animator.SetBool(_animIDJump, true);
+                        //_animator.SetBool(_animIDJump, true);
                     }
                 }
 
